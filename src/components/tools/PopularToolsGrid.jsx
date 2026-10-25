@@ -1,8 +1,17 @@
-import { Image as ImageIcon, Compass, ArrowRight } from 'lucide-react';
+import { Image as ImageIcon, Compass, Layers } from 'lucide-react';
 import ToolCard from './ToolCard';
 
 export default function PopularToolsGrid({ onSelectTool }) {
   const tools = [
+    {
+      id: 'responsive-image-set',
+      title: 'Responsive Image Set',
+      description: 'Generate multi-width AVIF & WebP variants with copy-ready <picture> tags. Zero upload lag.',
+      color: 'lime',
+      icon: <Layers className="w-5 h-5" />,
+      to: '/responsive-images',
+      badge: 'NEW • WASM',
+    },
     {
       id: 'image-converter',
       title: 'Image Converter',

@@ -5,6 +5,7 @@ import ImageConverterPage from './pages/ImageConverterPage';
 import ToWebpPage from './pages/ToWebpPage';
 import ToolWorkspacePage from './pages/ToolWorkspacePage';
 import AboutPage from './pages/AboutPage';
+import ResponsiveImageSetPage from './pages/ResponsiveImageSetPage';
 import './App.css';
 
 export default function App() {
@@ -18,7 +19,8 @@ export default function App() {
           <Route path="/image-convertor" element={<ImageConverterPage />} />
           <Route path="/image-converter" element={<Navigate to="/image-convertor" replace />} />
           <Route path="/image-convertor/to-webp" element={<ToWebpPage />} />
-          <Route path="/image-converter/to-webp" element={<Navigate to="/image-convertor/to-webp" replace />} />
+          <Route path="/responsive-images" element={<ResponsiveImageSetPage />} />
+          <Route path="/tools/responsive-image-set" element={<ResponsiveImageSetPage />} />
           <Route path="/tools/:toolId" element={<ToolWorkspacePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Toaster } from 'sonner';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
@@ -7,6 +8,7 @@ export default function AppShell({ children }) {
 
   return (
     <div className="min-h-screen bg-[#080A0F] text-[#F4F2EC] flex flex-col">
+      <Toaster richColors position="top-right" theme="dark" />
       {/* Sidebar Navigation */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
