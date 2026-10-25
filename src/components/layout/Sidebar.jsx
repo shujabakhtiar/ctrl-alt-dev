@@ -1,11 +1,7 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { 
   Home, 
-  Image as ImageIcon, 
-  RefreshCw, 
-  FileText, 
-  Terminal, 
-  Heart 
+  Image as ImageIcon 
 } from 'lucide-react';
 import BrandMark from '../brand/BrandMark';
 
@@ -14,10 +10,7 @@ export default function Sidebar({ isOpen, onClose }) {
 
   const navItems = [
     { name: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
-    { name: 'Image Tools', path: '/image-convertor', icon: <ImageIcon className="w-4 h-4" /> },
-    { name: 'Conversion', path: '/image-convertor/to-webp', icon: <RefreshCw className="w-4 h-4" /> },
-    { name: 'Text Tools', path: '/#text-tools', icon: <FileText className="w-4 h-4" /> },
-    { name: 'Developer Utils', path: '/#dev-utils', icon: <Terminal className="w-4 h-4" /> },
+    { name: 'Image Converter', path: '/image-convertor', icon: <ImageIcon className="w-4 h-4" /> },
   ];
 
   return (
