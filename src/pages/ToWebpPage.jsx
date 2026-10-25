@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
-import AssetReducerWidget from '../components/AssetReducerWidget';
+import { ConvertToWebp } from '../modules/convert-to-webp';
 
 export default function ToWebpPage() {
   return (
@@ -19,7 +19,7 @@ export default function ToWebpPage() {
         <span className="text-[#F4F2EC] font-bold">Convert to WebP</span>
       </nav>
 
-      <AssetReducerWidget />
+      <ConvertToWebp />
     </div>
   );
 }
