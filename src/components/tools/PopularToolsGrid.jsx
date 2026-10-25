@@ -1,4 +1,4 @@
-import { Image as ImageIcon, Compass, Layers } from 'lucide-react';
+import { Image as ImageIcon, Compass, Layers, Sparkles } from 'lucide-react';
 import ToolCard from './ToolCard';
 
 export default function PopularToolsGrid({ onSelectTool }) {
@@ -11,6 +11,15 @@ export default function PopularToolsGrid({ onSelectTool }) {
       icon: <Layers className="w-5 h-5" />,
       to: '/responsive-images',
       badge: 'NEW • WASM',
+    },
+    {
+      id: 'favicon-generator',
+      title: 'Favicon & App Icon Suite',
+      description: 'Drop one image. Get complete favicon.ico, maskable PWA icons, manifest & ready-to-paste tags.',
+      color: 'cyan',
+      icon: <Sparkles className="w-5 h-5" />,
+      to: '/favicon-generator',
+      badge: 'NEW • PWA',
     },
     {
       id: 'image-converter',

@@ -6,6 +6,7 @@ import ToWebpPage from './pages/ToWebpPage';
 import ToolWorkspacePage from './pages/ToolWorkspacePage';
 import AboutPage from './pages/AboutPage';
 import ResponsiveImageSetPage from './pages/ResponsiveImageSetPage';
+import FaviconGeneratorPage from './pages/FaviconGeneratorPage';
 import './App.css';
 
 export default function App() {
@@ -21,6 +22,8 @@ export default function App() {
           <Route path="/image-convertor/to-webp" element={<ToWebpPage />} />
           <Route path="/responsive-images" element={<ResponsiveImageSetPage />} />
           <Route path="/tools/responsive-image-set" element={<ResponsiveImageSetPage />} />
+          <Route path="/favicon-generator" element={<FaviconGeneratorPage />} />
+          <Route path="/tools/favicon-generator" element={<FaviconGeneratorPage />} />
           <Route path="/tools/:toolId" element={<ToolWorkspacePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
