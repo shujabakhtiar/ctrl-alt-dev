@@ -11,7 +11,7 @@ export default function ImageConverterPage() {
       <nav className="flex items-center gap-2 font-mono text-xs text-[#7886A1] mb-6" aria-label="Breadcrumb">
         <Link to="/" className="hover:text-[#C8FF43] transition-colors flex items-center gap-1">
           <ArrowLeft className="w-3.5 h-3.5" />
-          <span>DevToolkit</span>
+          <span>CtrlAltDev</span>
         </Link>
         <span>/</span>
         <span className="text-[#F4F2EC] font-bold">Image Converter</span>

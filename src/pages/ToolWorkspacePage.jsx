@@ -24,7 +24,7 @@ export default function ToolWorkspacePage() {
 
   // JSON Formatter state
   const [jsonInput, setJsonInput] = useState(`{
-  "project": "DevToolkit",
+  "project": "CtrlAltDev",
   "version": "1.0.0",
   "features": ["100% Client-Side", "Fast", "Zero Uploads"],
   "stats": {
@@ -35,15 +35,15 @@ export default function ToolWorkspacePage() {
   const [jsonError, setJsonError] = useState(null);
 
   // Base64 state
-  const [base64Text, setBase64Text] = useState('Welcome to DevToolkit 2026!');
-  const [base64Output, setBase64Output] = useState(() => btoa('Welcome to DevToolkit 2026!'));
+  const [base64Text, setBase64Text] = useState('Welcome to CtrlAltDev 2026!');
+  const [base64Output, setBase64Output] = useState(() => btoa('Welcome to CtrlAltDev 2026!'));
   const [base64Image, setBase64Image] = useState(null);
 
   // Color Picker state
   const [selectedColor, setSelectedColor] = useState('#C8FF43');
 
   // Text Formatter state
-  const [textInput, setTextInput] = useState('  DevToolkit is a collection of fast, practical tools for frontend developers.  ');
+  const [textInput, setTextInput] = useState('  CtrlAltDev is a collection of fast, practical tools for frontend developers.  ');
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);

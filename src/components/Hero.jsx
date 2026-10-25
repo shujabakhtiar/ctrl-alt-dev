@@ -53,7 +53,7 @@ export default function Hero({ onExploreClick, onWhyClick }) {
               className="text-sm font-bold text-[#F4F2EC]"
               icon={<Play className="w-3.5 h-3.5 fill-current" />}
             >
-              WHY DEVTOOLKIT?
+              WHY CTRLALTDEV?
             </Button>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default function Hero({ onExploreClick, onWhyClick }) {
             {/* Mascot Image */}
             <img
               src={mascotHeroImg}
-              alt="DevToolkit Pixel Art Mascot typing at laptop with black cat"
+              alt="CtrlAltDev Pixel Art Mascot typing at laptop with black cat"
               className="w-full h-auto rounded-[8px] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
             />
 

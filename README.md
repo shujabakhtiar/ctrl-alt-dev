@@ -1,16 +1,35 @@
-# React + Vite
+# CtrlAltDev (`ctlraltdev`)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **SMALL TOOLS. BIG TIME SAVINGS.**
 
-Currently, two official plugins are available:
+A developer toolkit combining neo-brutalist UI, retro gaming aesthetics, pixel-art illustrations, tactile physical buttons, and dark surfaces with neon accents.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **⚡ 100% Client-Side:** All processing occurs locally inside your browser via Canvas & WebAssembly with zero server hops.
+- **🖼️ Image Converter & WebP Studio:** Live split comparison, lossy/lossless quality controls, and instant download.
+- **🧹 JSON Formatter & Validator:** Beautify, minify, and inspect JSON payloads.
+- **🔐 Base64 & Hash Tool:** Convert images and text to Data URLs instantly.
+- **🎨 Retro Color Picker:** Quick HEX, RGB, and CSS variable conversion.
+- **⚡ Fast & Free:** No signups, no limits, no trackers.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19**
+- **Vite 8**
+- **Tailwind CSS v4** (`@theme` design tokens)
+- **Lucide React**
+- **Silkscreen & Space Grotesk** display typography
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```

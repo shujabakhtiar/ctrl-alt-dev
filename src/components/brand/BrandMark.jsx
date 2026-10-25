@@ -20,9 +20,9 @@ export default function BrandMark({ showVersion = true, className = '' }) {
         </svg>
       </div>
 
-      {/* DEVTOOLKIT Wordmark */}
+      {/* CTRLALTDEV Wordmark */}
       <span className="font-['Silkscreen',monospace] font-bold text-lg md:text-xl text-[#F4F2EC] tracking-wider">
-        DEVTOOLKIT
+        CTRLALTDEV
       </span>
 
       {/* v1.0 Pill Badge */}
