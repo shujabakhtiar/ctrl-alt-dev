@@ -17,32 +17,47 @@ Stack assumed: React 19, TypeScript (strict), Vite, Tailwind CSS, Zustand for cl
 
 ## Project structure: feature/module based
 
-Group by feature, not by file type. Everything for a feature lives together and is exposed through one public entry point.
+Group by feature, not by file type. In CtrlAltDev, every tool and major feature lives in `src/modules/<kebab-case-name>/` and exposes everything through a single public barrel (`index.ts`).
 
 ```
 src/
-  app/                  # app shell: providers, router, layout
-  components/ui/        # shared, generic UI primitives only
-  hooks/                # shared, generic hooks only
-  lib/                  # shared utilities (formatting, http client, etc.)
+  components/ui/        # shared, generic UI primitives (Button, Card, Badge, Modal)
+  hooks/                # shared, cross-feature hooks only
+  lib/                  # shared utilities (commonState, errorHandler, format, download)
   modules/
-    feature-name/
-      index.ts          # public API: the only file other code imports from
-      FeatureName.tsx
-      components/
-      hooks/
-      store/            # Zustand store(s) for this feature
-      api/              # queries, mutations, request functions
-      lib/
+    <tool-name>/        # kebab-case folder (e.g. convert-to-webp, responsive-image-set)
+      index.ts          # public API: exports main component, store, and types only
+      <ToolName>.tsx    # main container orchestrating layout, toolbar & HUD
+      components/       # single-responsibility UI sub-components
+        DropZone.tsx    # file upload, drag-and-drop, demo asset loader, privacy note
+        ControlsPanel.tsx # tool parameters, quality slider, presets, export buttons
+        PreviewPanel.tsx  # visual inspection (split comparison slider, side-by-side)
+        StatsHud.tsx    # live savings HUD (original size, optimized size, delta)
+      store/            # Zustand client state for this tool
+        use<ToolName>Store.ts
+      lib/              # pure business logic, calculations, transforms (zero JSX)
+        converter.ts    # pure functions (dimension scaling, canvas ops, encoders)
       types/
-      __tests__/
+        index.ts        # all TypeScript contracts for this feature
+      workers/          # (optional) Web Workers for heavy compute / WASM
+      codecs/           # (optional) WASM codec wrappers & decode/encode verification
+      __tests__/        # unit tests for pure lib functions and store logic
+  pages/
+    <ToolName>Page.jsx  # thin route wrapper: breadcrumb navigation + <ToolName />
 ```
 
-Rules:
-- Modules never import from another module's internals, only from its `index.ts`.
-- Modules may import from `components/ui`, `hooks`, `lib`, and external packages, never from `app/`.
-- Keep barrel files (`index.ts`) at module boundaries only. Do not add barrels to every folder; they hurt tree-shaking and slow dev builds.
-- Colocate tests, types, and styles with the code they belong to.
+### Tool Module Rules:
+1. **Public API via Barrel**: Modules only expose their top-level component (`<ToolName />`), their hook/store (`use<ToolName>Store`), and public types in `index.ts`. Outside code (pages, other modules) must NEVER import from a module's internal subdirectories.
+2. **Thin Pages**: Route pages (`src/pages/*Page.jsx`) are lightweight wrappers responsible only for breadcrumb navigation, route parameters, and rendering the module's container component.
+3. **Sub-component Decomposition**: Never build monolithic tool files. Decompose into focused sub-components under `components/`:
+   - `DropZone.tsx`: Handles file selection, drop events, demo asset loading, and client-side privacy badges.
+   - `StatsHud.tsx`: Displays original vs output sizes and percentage/byte savings using `formatBytes` and `calculateSavingsPercent`.
+   - `ControlsPanel.tsx`: Houses inputs, sliders, tactical preset buttons, and primary download/copy actions.
+   - `PreviewPanel.tsx`: Interactive preview (split-slider comparison with draggable handle or side-by-side view).
+4. **Pure Logic in `lib/`**: Canvas manipulation, image decoding/encoding, dimension math, and filename formatting belong in `lib/*.ts` as pure functions, completely detached from React renders.
+5. **Memory Management**: Tool stores dealing with Blobs and Object URLs must proactively call `URL.revokeObjectURL()` on file replacement or clear to prevent client memory leaks.
+6. **Debounced Processing**: Interactive parameters (e.g., quality sliders, resize thresholds) must debounce re-encoding (100–120ms) so the UI remains fluid at 60fps.
+7. **Legacy Re-exports**: When refactoring a legacy monolithic component into a module, leave a clean one-line re-export in the old location (marked `@deprecated`) to avoid breaking existing imports.
 
 ## Components
 
@@ -242,6 +257,8 @@ When reviewing or finishing React code, check:
 8. Types strict, no `any`, external data validated?
 9. Tests cover behavior; no flaky timing hacks?
 10. Does it match the existing codebase's conventions?
+11. Are developer tools structured as modular features under `src/modules/<tool-name>` with a strict public barrel (`index.ts`) and decomposed sub-components?
+12. Are client-side Object URLs (`URL.createObjectURL`) revoked with `URL.revokeObjectURL()` on clear or re-upload to prevent memory leaks?
 
 ## How to respond when using this skill
 
