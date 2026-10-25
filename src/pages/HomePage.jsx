@@ -1,25 +1,34 @@
-import { Link } from 'react-router-dom';
+import Hero from '../components/Hero';
+import PopularToolsGrid from '../components/tools/PopularToolsGrid';
+import BottomBanner from '../components/layout/BottomBanner';
 
 export default function HomePage() {
-  return (
-    <div className="home-minimal-container">
-      <div className="home-hero-minimal">
-        <h1 className="minimal-title">
-          Welcome to <span className="gradient-text">Devs-Toolkit</span>
-        </h1>
-        <p className="minimal-subtitle">Select a tool to get started.</p>
-      </div>
+  const handleExplore = (e) => {
+    e?.preventDefault();
+    const el = document.getElementById('popular-tools');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-      <div className="tool-select-grid">
-        <Link to="/image-convertor" className="minimal-tool-card">
-          <div className="tool-card-icon">🖼️</div>
-          <div className="tool-card-info">
-            <h2 className="tool-card-title">Image Converter</h2>
-            <p className="tool-card-desc">Client-side image conversion and optimization utilities.</p>
-          </div>
-          <div className="tool-card-arrow">→</div>
-        </Link>
-      </div>
+  const handleWhy = (e) => {
+    e?.preventDefault();
+    const el = document.getElementById('features-banner');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-2">
+      {/* Hero Section */}
+      <Hero onExploreClick={handleExplore} onWhyClick={handleWhy} />
+
+      {/* Popular Tools 4x2 Grid */}
+      <PopularToolsGrid />
+
+      {/* Value Props & Sticker Banner */}
+      <BottomBanner />
     </div>
   );
 }

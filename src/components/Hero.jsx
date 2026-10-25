@@ -1,64 +1,98 @@
-export default function Hero() {
+import { ArrowRight, Play, Sparkles, Terminal } from 'lucide-react';
+import Button from './ui/Button';
+import mascotHeroImg from '../assets/mascot_hero.jpg';
+
+export default function Hero({ onExploreClick, onWhyClick }) {
   return (
-    <section className="hero-section" id="top">
-      <div className="hero-glow-blob blob-1"></div>
-      <div className="hero-glow-blob blob-2"></div>
-      
-      <div className="hero-content">
-        <div className="hero-badge">
-          <span className="badge-pulse"></span>
-          <span className="badge-text">⚡ 100% Local Browser Engine • Zero Server Uploads • Infinite Privacy</span>
+    <section className="relative pt-2 pb-12 overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#795BFF]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-64 h-64 bg-[#C8FF43]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        {/* Left Column: Copy & Actions */}
+        <div className="lg:col-span-7 flex flex-col items-start z-10">
+          {/* Tag Pill Badge */}
+          <div className="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#1A1838] border border-[#795BFF]/50 text-xs font-mono mb-6 shadow-[0_0_15px_rgba(121,91,255,0.2)]">
+            <span className="text-[#C8FF43] font-bold">⚡ FAST</span>
+            <span className="text-[#7886A1]">•</span>
+            <span className="text-[#62B9FF] font-bold">⚡ FREE</span>
+            <span className="text-[#7886A1]">•</span>
+            <span className="text-[#F05CE8] font-bold">⚡ NO SIGN UP</span>
+          </div>
+
+          {/* Main Display Heading */}
+          <h1 className="font-['Silkscreen',monospace] text-3xl sm:text-4xl md:text-[44px] lg:text-[46px] leading-[1.18] tracking-normal mb-5 text-[#F4F2EC]">
+            ALL THE DEV TOOLS <br />
+            YOU <span className="text-[#C8FF43]">ACTUALLY</span> NEED
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-sm sm:text-base text-[#AAB7D0] leading-relaxed max-w-xl mb-8">
+            Convert, compress, edit and optimize your assets — all in one place. No sign up. No limits. Just useful tools for modern developers.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-wrap items-center gap-4">
+            <Button
+              href="#popular-tools"
+              onClick={onExploreClick}
+              variant="lime"
+              size="lg"
+              className="text-sm font-bold tracking-wider"
+              iconRight={<ArrowRight className="w-4 h-4" />}
+            >
+              EXPLORE TOOLS
+            </Button>
+
+            <Button
+              href="#features-banner"
+              onClick={onWhyClick}
+              variant="dark"
+              size="lg"
+              className="text-sm font-bold text-[#F4F2EC]"
+              icon={<Play className="w-3.5 h-3.5 fill-current" />}
+            >
+              WHY DEVTOOLKIT?
+            </Button>
+          </div>
         </div>
 
-        <h1 className="hero-title">
-          The Modern Developer’s <br />
-          <span className="gradient-text hero-highlight">High-Velocity Toolkit</span>
-        </h1>
+        {/* Right Column: Pixel Art Mascot & Retro Terminal Artwork */}
+        <div className="lg:col-span-5 relative flex justify-center">
+          <div className="relative w-full max-w-md rounded-[12px] border-2 border-[#2A3242] bg-[#0D1018] p-2 shadow-[0_12px_32px_rgba(0,0,0,0.8)] overflow-hidden group">
+            {/* Mascot Image */}
+            <img
+              src={mascotHeroImg}
+              alt="DevToolkit Pixel Art Mascot typing at laptop with black cat"
+              className="w-full h-auto rounded-[8px] object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+            />
 
-        <p className="hero-description">
-          Stop uploading sensitive client images and dev assets to random servers. 
-          <strong> Devs-Toolkit</strong> delivers high-performance developer utilities engineered to run 
-          directly inside your browser at native silicon speed.
-        </p>
+            {/* Floating Terminal Code Window */}
+            <div className="absolute top-4 left-4 bg-[#080A0F]/90 border border-[#2A3242] rounded-[6px] p-2.5 font-mono text-[11px] shadow-lg backdrop-blur-xs hidden sm:block">
+              <div className="flex items-center gap-1.5 pb-1.5 mb-1.5 border-b border-[#2A3242]">
+                <div className="w-2 h-2 rounded-full bg-[#FF9855]" />
+                <div className="w-2 h-2 rounded-full bg-[#FFD84D]" />
+                <div className="w-2 h-2 rounded-full bg-[#C8FF43]" />
+                <span className="text-[9px] text-[#7886A1] ml-1">toolkit.sh</span>
+              </div>
+              <div className="text-[#C8FF43] space-y-0.5">
+                <div>&gt; optimize</div>
+                <div>&gt; convert</div>
+                <div>&gt; create</div>
+                <div className="flex items-center">
+                  <span>&gt; repeat_</span>
+                  <span className="w-1.5 h-3 bg-[#C8FF43] ml-0.5 animate-pulse" />
+                </div>
+              </div>
+            </div>
 
-        <div className="hero-actions">
-          <a href="#asset-reducer" className="hero-btn-primary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            <span>Launch Asset Reducer</span>
-            <span className="btn-tag">Instant</span>
-          </a>
-
-          <a href="#toolkit-catalog" className="hero-btn-secondary">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="7" height="7"></rect>
-              <rect x="14" y="3" width="7" height="7"></rect>
-              <rect x="14" y="14" width="7" height="7"></rect>
-              <rect x="3" y="14" width="7" height="7"></rect>
-            </svg>
-            <span>Browse 8+ Utilities</span>
-          </a>
-        </div>
-
-        <div className="hero-metrics-grid">
-          <div className="metric-card">
-            <div className="metric-val">~75% - 90%</div>
-            <div className="metric-label">Typical Asset Size Reduction</div>
-          </div>
-          <div className="metric-card">
-            <div className="metric-val">0 ms</div>
-            <div className="metric-label">Network Upload Delay (All Local)</div>
-          </div>
-          <div className="metric-card">
-            <div className="metric-val">WebP & AVIF</div>
-            <div className="metric-label">Next-Gen Modern Formats</div>
-          </div>
-          <div className="metric-card">
-            <div className="metric-val">100% Free</div>
-            <div className="metric-label">Open Source & Unrestricted</div>
+            {/* Floating Retro Badges: PNG -> WEBP */}
+            <div className="absolute bottom-4 right-4 bg-[#111620]/95 border border-[#46536B] rounded-[6px] px-2.5 py-1.5 font-mono text-[11px] shadow-xl flex items-center gap-2 backdrop-blur-xs">
+              <span className="text-[#F05CE8] font-bold">PNG</span>
+              <span className="text-[#C8FF43]">&rarr;</span>
+              <span className="text-[#C8FF43] font-bold">WEBP</span>
+            </div>
           </div>
         </div>
       </div>
