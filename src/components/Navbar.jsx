@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Navbar({ activeTab, setActiveTab }) {
+export default function Navbar() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('dt-theme') || 'dark';
   });
@@ -17,7 +18,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
   return (
     <header className="navbar-container">
       <div className="navbar-inner">
-        <a href="#top" className="navbar-brand">
+        <Link to="/" className="navbar-brand">
           <div className="brand-logo-glow">
             <svg className="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
@@ -25,36 +26,13 @@ export default function Navbar({ activeTab, setActiveTab }) {
           </div>
           <div className="brand-text-wrap">
             <span className="brand-title">Devs<span className="gradient-text">-Toolkit</span></span>
-            <span className="brand-badge">v1.0 • Client-Side</span>
           </div>
-        </a>
+        </Link>
 
         <nav className="navbar-links" aria-label="Main Navigation">
-          <a 
-            href="#asset-reducer" 
-            className={`nav-link ${activeTab === 'reducer' ? 'active' : ''}`}
-            onClick={() => setActiveTab('reducer')}
-          >
-            <span className="nav-icon">🗜️</span>
-            <span>OptiPress WebP</span>
-            <span className="nav-pill-live">Interactive</span>
-          </a>
-          <a 
-            href="#toolkit-catalog" 
-            className={`nav-link ${activeTab === 'catalog' ? 'active' : ''}`}
-            onClick={() => setActiveTab('catalog')}
-          >
-            <span className="nav-icon">⚡</span>
-            <span>All Tools</span>
-          </a>
-          <a 
-            href="#benchmarks" 
-            className={`nav-link ${activeTab === 'benchmarks' ? 'active' : ''}`}
-            onClick={() => setActiveTab('benchmarks')}
-          >
-            <span className="nav-icon">📊</span>
-            <span>Benchmarks</span>
-          </a>
+          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/image-convertor" className="nav-link">Image Converter</Link>
+          <Link to="/image-convertor/to-webp" className="nav-link">Convert to WebP</Link>
         </nav>
 
         <div className="navbar-actions">
@@ -83,13 +61,6 @@ export default function Navbar({ activeTab, setActiveTab }) {
               </svg>
             )}
           </button>
-
-          <a 
-            href="#asset-reducer" 
-            className="btn-primary-glow"
-          >
-            Launch Reducer
-          </a>
         </div>
       </div>
     </header>

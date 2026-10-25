@@ -204,18 +204,11 @@ export default function AssetReducerWidget() {
       : 0;
 
   return (
-    <section className="widget-section" id="asset-reducer">
-      <div className="section-header">
-        <div className="widget-chip">
-          <span className="chip-icon">🗜️</span>
-          <span>Featured Flagship Utility</span>
-        </div>
-        <h2 className="widget-title">
-          OptiPress <span className="gradient-text">WebP Studio</span>
-        </h2>
+    <div className="converter-page-wrapper">
+      <div className="widget-page-header">
+        <h1 className="widget-title">Convert to <span className="gradient-text">WebP</span></h1>
         <p className="widget-subtitle">
-          Next-generation asset size reducer & real-time WebP compressor.
-          Zero server transmission — everything encodes directly in your GPU/CPU canvas buffer.
+          Compress and convert images to WebP directly in your browser. 100% client-side.
         </p>
       </div>
 
@@ -625,6 +618,6 @@ export default function AssetReducerWidget() {
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 }
