@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import ImageConverterPage from './pages/ImageConverterPage';
 import ToWebpPage from './pages/ToWebpPage';
 import ToolWorkspacePage from './pages/ToolWorkspacePage';
+import AboutPage from './pages/AboutPage';
 import './App.css';
 
 export default function App() {
@@ -12,6 +13,8 @@ export default function App() {
       <AppShell>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/story" element={<AboutPage />} />
           <Route path="/image-convertor" element={<ImageConverterPage />} />
           <Route path="/image-converter" element={<Navigate to="/image-convertor" replace />} />
           <Route path="/image-convertor/to-webp" element={<ToWebpPage />} />

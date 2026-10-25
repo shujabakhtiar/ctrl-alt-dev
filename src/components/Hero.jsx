@@ -46,8 +46,7 @@ export default function Hero({ onExploreClick, onWhyClick }) {
             </Button>
 
             <Button
-              href="#features-banner"
-              onClick={onWhyClick}
+              to="/about"
               variant="dark"
               size="lg"
               className="text-sm font-bold text-[#F4F2EC]"
