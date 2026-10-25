@@ -43,7 +43,7 @@ export default function ToolWorkspacePage() {
   const [selectedColor, setSelectedColor] = useState('#C8FF43');
 
   // Text Formatter state
-  const [textInput, setTextInput] = useState('  CtrlAltDev is a collection of fast, practical tools for frontend developers.  ');
+  const [textInput, setTextInput] = useState('  CtrlAltDev is a collection of fast, practical tools for developers.  ');
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);

@@ -85,8 +85,8 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
           <p className="text-xs text-[#AAB7D0] leading-snug font-mono">
             Built for<br />
-            frontend devs,<br />
-            by frontend devs.
+            developers,<br />
+            by developers.
           </p>
 
           {/* Retro Checkerboard strip */}

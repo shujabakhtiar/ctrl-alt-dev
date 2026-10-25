@@ -83,7 +83,7 @@ export default function AboutPage() {
               SO I BUILT <span className="text-[#C8FF43]">CTRL ALT DEV</span>.
             </h2>
             <p>
-              A focused, client-side toolbox for the exact friction that slows frontend developers down. Convert images. Tame bloated assets. Keep privacy absolute.
+              A focused, client-side toolbox for the exact friction that slows developers down. Convert images. Tame bloated assets. Keep privacy absolute.
             </p>
             <p className="mt-3 text-xs sm:text-sm text-[#7886A1] font-mono">
               No jumping between 15 different sketchy tabs. No subscriptions for basic utilities. Just open a tool, get the job done at native silicon speed, and get back to building.
