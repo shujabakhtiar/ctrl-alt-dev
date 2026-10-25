@@ -12,8 +12,8 @@ export default function FaviconGeneratorPage() {
           <span>CtrlAltDev</span>
         </Link>
         <span>/</span>
-        <Link to="/image-convertor" className="hover:text-[#C8FF43] transition-colors">
-          Image Tools
+        <Link to="/tools" className="hover:text-[#C8FF43] transition-colors">
+          Tools
         </Link>
         <span>/</span>
         <span className="text-[#F4F2EC] font-bold">Favicon Generator</span>

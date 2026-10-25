@@ -252,7 +252,7 @@ export default function AboutPage() {
 
         <div className="flex justify-center">
           <Button
-            to="/image-convertor"
+            to="/tools"
             variant="lime"
             size="lg"
             className="text-base font-bold tracking-wider px-8"

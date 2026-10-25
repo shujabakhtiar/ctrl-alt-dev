@@ -125,11 +125,11 @@ export default function ToolWorkspacePage() {
       {/* Breadcrumb / Back button */}
       <div className="mb-6">
         <Link
-          to="/"
+          to="/tools"
           className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#AAB7D0] hover:text-[#C8FF43] transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>BACK TO POPULAR TOOLS</span>
+          <span>BACK TO ALL TOOLS</span>
         </Link>
       </div>
 
@@ -397,7 +397,7 @@ export default function ToolWorkspacePage() {
             This module processes directly in your client browser using WebAssembly. For full image optimization and format conversion, explore our flagship converter.
           </p>
           <Button
-            to="/image-convertor/to-webp"
+            to="/convert-to-webp"
             variant="lime"
             size="md"
           >

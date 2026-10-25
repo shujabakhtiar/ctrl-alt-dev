@@ -1,8 +1,10 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { 
   Home, 
-  Image as ImageIcon,
+  Wrench,
+  Zap,
   Layers,
+  Sparkles,
   Terminal 
 } from 'lucide-react';
 import BrandMark from '../brand/BrandMark';
@@ -12,8 +14,10 @@ export default function Sidebar({ isOpen, onClose }) {
 
   const navItems = [
     { name: 'Home', path: '/', icon: <Home className="w-4 h-4" /> },
+    { name: 'All Tools', path: '/tools', icon: <Wrench className="w-4 h-4" /> },
+    { name: 'Convert to WebP', path: '/convert-to-webp', icon: <Zap className="w-4 h-4" /> },
     { name: 'Responsive Set', path: '/responsive-images', icon: <Layers className="w-4 h-4" /> },
-    { name: 'Image Converter', path: '/image-convertor', icon: <ImageIcon className="w-4 h-4" /> },
+    { name: 'Favicon Suite', path: '/favicon-generator', icon: <Sparkles className="w-4 h-4" /> },
     { name: 'The Story', path: '/about', icon: <Terminal className="w-4 h-4" /> },
   ];
 
@@ -45,7 +49,9 @@ export default function Sidebar({ isOpen, onClose }) {
               const isActive = 
                 item.path === '/' 
                   ? location.pathname === '/' 
-                  : location.pathname.startsWith(item.path.split('#')[0]);
+                  : item.path === '/tools'
+                    ? location.pathname === '/tools'
+                    : location.pathname.startsWith(item.path.split('#')[0]);
 
               return (
                 <NavLink

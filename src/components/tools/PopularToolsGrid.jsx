@@ -1,8 +1,18 @@
-import { Image as ImageIcon, Compass, Layers, Sparkles } from 'lucide-react';
+import { Zap, Compass, Layers, Sparkles, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import ToolCard from './ToolCard';
 
 export default function PopularToolsGrid({ onSelectTool }) {
   const tools = [
+    {
+      id: 'convert-to-webp',
+      title: 'Convert to WebP',
+      description: 'Transform images into modern WebP with custom compression and live side-by-side preview.',
+      color: 'pink',
+      icon: <Zap className="w-5 h-5" />,
+      to: '/convert-to-webp',
+      badge: 'FLAGSHIP • FAST',
+    },
     {
       id: 'responsive-image-set',
       title: 'Responsive Image Set',
@@ -21,14 +31,6 @@ export default function PopularToolsGrid({ onSelectTool }) {
       to: '/favicon-generator',
       badge: 'NEW • PWA',
     },
-    {
-      id: 'image-converter',
-      title: 'Image Converter',
-      description: 'Convert between JPG, PNG, WEBP, AVIF and more. High-speed, 100% client-side privacy.',
-      color: 'pink',
-      icon: <ImageIcon className="w-5 h-5" />,
-      to: '/image-convertor',
-    },
   ];
 
   return (
@@ -46,6 +48,14 @@ export default function PopularToolsGrid({ onSelectTool }) {
             The essentials, right at your fingertips.
           </p>
         </div>
+
+        <Link
+          to="/tools"
+          className="inline-flex items-center gap-1.5 font-mono text-xs text-[#AAB7D0] hover:text-[#C8FF43] transition-colors"
+        >
+          <span>VIEW ALL TOOLS</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
       </div>
 
       {/* Grid with Image Converter */}

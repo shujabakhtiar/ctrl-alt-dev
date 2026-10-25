@@ -31,8 +31,10 @@ export default function Navbar() {
 
         <nav className="navbar-links" aria-label="Main Navigation">
           <Link to="/" className="nav-link">Home</Link>
-          <Link to="/image-convertor" className="nav-link">Image Converter</Link>
-          <Link to="/image-convertor/to-webp" className="nav-link">Convert to WebP</Link>
+          <Link to="/tools" className="nav-link">Tools</Link>
+          <Link to="/convert-to-webp" className="nav-link">Convert to WebP</Link>
+          <Link to="/responsive-images" className="nav-link">Responsive Set</Link>
+          <Link to="/favicon-generator" className="nav-link">Favicon Suite</Link>
         </nav>
 
         <div className="navbar-actions">

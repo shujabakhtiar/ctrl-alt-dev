@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AppShell from './components/layout/AppShell';
 import HomePage from './pages/HomePage';
-import ImageConverterPage from './pages/ImageConverterPage';
+import ToolsPage from './pages/ToolsPage';
 import ToWebpPage from './pages/ToWebpPage';
 import ToolWorkspacePage from './pages/ToolWorkspacePage';
 import AboutPage from './pages/AboutPage';
@@ -15,15 +15,29 @@ export default function App() {
       <AppShell>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/tools" element={<ToolsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/story" element={<AboutPage />} />
-          <Route path="/image-convertor" element={<ImageConverterPage />} />
-          <Route path="/image-converter" element={<Navigate to="/image-convertor" replace />} />
-          <Route path="/image-convertor/to-webp" element={<ToWebpPage />} />
+
+          {/* Three Core Standalone Tools */}
+          <Route path="/convert-to-webp" element={<ToWebpPage />} />
+          <Route path="/to-webp" element={<Navigate to="/convert-to-webp" replace />} />
+          <Route path="/tools/to-webp" element={<Navigate to="/convert-to-webp" replace />} />
+          <Route path="/tools/convert-to-webp" element={<ToWebpPage />} />
+
           <Route path="/responsive-images" element={<ResponsiveImageSetPage />} />
-          <Route path="/tools/responsive-image-set" element={<ResponsiveImageSetPage />} />
+          <Route path="/tools/responsive-images" element={<ResponsiveImageSetPage />} />
+          <Route path="/tools/responsive-image-set" element={<Navigate to="/responsive-images" replace />} />
+
           <Route path="/favicon-generator" element={<FaviconGeneratorPage />} />
           <Route path="/tools/favicon-generator" element={<FaviconGeneratorPage />} />
+
+          {/* Legacy subclassification redirects */}
+          <Route path="/image-convertor" element={<Navigate to="/tools" replace />} />
+          <Route path="/image-converter" element={<Navigate to="/tools" replace />} />
+          <Route path="/image-convertor/to-webp" element={<Navigate to="/convert-to-webp" replace />} />
+
+          {/* Fallbacks */}
           <Route path="/tools/:toolId" element={<ToolWorkspacePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

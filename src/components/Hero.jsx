@@ -35,7 +35,7 @@ export default function Hero({ onExploreClick, onWhyClick }) {
           {/* Buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <Button
-              href="#popular-tools"
+              to="/tools"
               onClick={onExploreClick}
               variant="lime"
               size="lg"
