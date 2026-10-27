@@ -7,6 +7,7 @@ import ToolWorkspacePage from './pages/ToolWorkspacePage';
 import AboutPage from './pages/AboutPage';
 import ResponsiveImageSetPage from './pages/ResponsiveImageSetPage';
 import FaviconGeneratorPage from './pages/FaviconGeneratorPage';
+import BackgroundRemoverPage from './pages/BackgroundRemoverPage';
 import './App.css';
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/story" element={<AboutPage />} />
 
-          {/* Three Core Standalone Tools */}
+          {/* Standalone Tools */}
           <Route path="/convert-to-webp" element={<ToWebpPage />} />
           <Route path="/to-webp" element={<Navigate to="/convert-to-webp" replace />} />
           <Route path="/tools/to-webp" element={<Navigate to="/convert-to-webp" replace />} />
@@ -31,6 +32,11 @@ export default function App() {
 
           <Route path="/favicon-generator" element={<FaviconGeneratorPage />} />
           <Route path="/tools/favicon-generator" element={<FaviconGeneratorPage />} />
+
+          <Route path="/background-remover" element={<BackgroundRemoverPage />} />
+          <Route path="/tools/background-remover" element={<BackgroundRemoverPage />} />
+          <Route path="/remove-background" element={<Navigate to="/background-remover" replace />} />
+          <Route path="/tools/remove-background" element={<Navigate to="/background-remover" replace />} />
 
           {/* Legacy subclassification redirects */}
           <Route path="/image-convertor" element={<Navigate to="/tools" replace />} />

@@ -3,7 +3,7 @@ import Button from './ui/Button';
 import mascotHeroImg from '../assets/mascot_hero.jpg';
 import heroBgImg from '../assets/hero_bg.jpg';
 
-export default function Hero({ onExploreClick, onWhyClick }) {
+export default function Hero({ onExploreClick }) {
   return (
     <section className="relative pt-2 pb-8 overflow-hidden">
       {/* Background ambient lighting */}

@@ -5,10 +5,7 @@ import {
   Terminal, 
   AlertTriangle, 
   CheckCircle2, 
-  Sparkles, 
-  Cpu, 
-  Layers, 
-  Rocket 
+  Cpu 
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 

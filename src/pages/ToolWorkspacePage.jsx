@@ -10,8 +10,7 @@ import {
   Grid, 
   Archive, 
   FileText,
-  Upload,
-  Download
+  Upload
 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
@@ -35,7 +34,6 @@ export default function ToolWorkspacePage() {
   const [jsonError, setJsonError] = useState(null);
 
   // Base64 state
-  const [base64Text, setBase64Text] = useState('Welcome to CtrlAltDev 2026!');
   const [base64Output, setBase64Output] = useState(() => btoa('Welcome to CtrlAltDev 2026!'));
   const [base64Image, setBase64Image] = useState(null);
 

@@ -1,4 +1,4 @@
-import { Zap, Compass, Layers, Sparkles, ArrowRight } from 'lucide-react';
+import { Zap, Compass, Layers, Sparkles, Scissors, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ToolCard from './ToolCard';
 
@@ -31,6 +31,15 @@ export default function PopularToolsGrid({ onSelectTool }) {
       to: '/favicon-generator',
       badge: 'NEW • PWA',
     },
+    {
+      id: 'background-remover',
+      title: 'Background Remover',
+      description: 'Convert solid & AI backgrounds into clean transparency. Contiguous flood-fill without halos.',
+      color: 'purple',
+      icon: <Scissors className="w-5 h-5" />,
+      to: '/background-remover',
+      badge: 'NEW • CIE LAB',
+    },
   ];
 
   return (
@@ -58,8 +67,8 @@ export default function PopularToolsGrid({ onSelectTool }) {
         </Link>
       </div>
 
-      {/* Grid with Image Converter */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* Grid with Tools */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {tools.map((tool) => (
           <ToolCard
             key={tool.id}

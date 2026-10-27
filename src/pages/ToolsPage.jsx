@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Zap, Layers, Sparkles, Check, ShieldCheck, Cpu } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Zap, Layers, Sparkles, Scissors, Check, ShieldCheck, Cpu } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Badge from '../components/ui/Badge';
 import ToolTile from '../components/tools/ToolTile';
@@ -65,6 +65,26 @@ export default function ToolsPage() {
         { title: 'Live tab & home preview', desc: 'Simulate how your icon looks on dark, light, and mobile tab bars.' },
       ],
       tags: ['FAVICON.ICO', 'PWA', 'APPLE TOUCH', 'MANIFEST.JSON', 'SVG'],
+    },
+    {
+      id: 'background-remover',
+      title: 'Solid & AI Background Remover',
+      badge: 'NEW • CIE LAB',
+      badgeVariant: 'purple',
+      color: 'purple',
+      icon: <Scissors className="w-5 h-5 text-[#080A0F]" />,
+      to: '/background-remover',
+      buttonText: 'Open Background Remover',
+      buttonVariant: 'purple',
+      description:
+        'Transform flat AI backgrounds (Midjourney/DALL-E white boxes or green screens) into clean transparent graphics. Contiguous flood-fill ensures internal details stay protected.',
+      features: [
+        { title: 'Perceptual CIE Lab', desc: 'Uniform color difference (Delta E) handles subtle gradient noise flawlessly.' },
+        { title: 'Zero halo fringes', desc: 'Edge decontamination un-mixes background bleed from boundary pixels.' },
+        { title: 'Contiguous flood-fill', desc: 'Inner white teeth, eyes, shirts, and badge centers are preserved.' },
+        { title: 'Live proxy canvas', desc: '60fps slider adjustments via Web Worker with instant full-res export.' },
+      ],
+      tags: ['AI GRAPHICS', 'TRANSPARENCY', 'CIE LAB', 'ANTI-HALO', 'WASM'],
     },
   ];
 
